@@ -11,6 +11,8 @@ var train = document.getElementById('train-btn');
 var loss = document.getElementById('loss');
 var result = document.getElementById('result');
 var predict = document.getElementById('predict');
+var saveBtn = document.getElementById('save-btn');
+var loadBtn = document.getElementById('load-btn');
 
 let totalloss = 0;
 
@@ -62,12 +64,23 @@ const featureExtractor = ml5.featureExtractor('MobileNet', function () {
         result.innerText = data;
         classifier.classify(gotResults);
     }
+
+    // save model
+    saveBtn.onclick = function () {
+        classifier.save();
+        saveBtn.innerHTML = "Model Saved";
+    }
+
+    // load model
+    loadBtn.onclick = function () {
+        classifier.load('./savedModel/model.json');
+        loadBtn.innerHTML = "Model Loaded";
+    }
 });
 
 
 // Sample A: takePhoto
 function takeScreenshotA() {
-    console.log('mouseDown');
     let canvas = document.createElement('canvas');
     canvas.width = video.offsetWidth;
     canvas.height = video.offsetHeight;
@@ -80,13 +93,11 @@ function takeScreenshotA() {
     );
 
     containerA.prepend(canvas);
-
     aCount.innerText = Number(aCount.innerText) + 1;
 }
 
 // Sample B: takePhoto
 function takeScreenshotB() {
-    console.log('mouseDown');
     let canvas = document.createElement('canvas');
     canvas.width = video.offsetWidth;
     canvas.height = video.offsetHeight;
@@ -99,6 +110,5 @@ function takeScreenshotB() {
     );
 
     containerB.prepend(canvas);
-
     bCount.innerText = Number(bCount.innerText) + 1;
 }
