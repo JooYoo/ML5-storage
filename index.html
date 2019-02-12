@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ML-storage</title>
+    <link rel="stylesheet" href="./css/site.css">
+    <script src="./lib/ml5/ml5.min.js"></script>
+</head>
+
+<body>
+    <div id="video-container">
+        <video id="video"></video>
+        <div id="videoStatus"></div>
+        <div id="loading"></div>
+    </div>
+
+    <div class="canvas-center">
+        <div class="main-canvas-container">
+            <div id="canvas-container-a" class="canvas-container"></div>
+            <button id="a-btn" class="my-btn" onmousedown="inter=setInterval(takeScreenshotA(), 1*100);" onmouseup="clearInterval(inter);">
+                SampleA x
+                <span id="sampleA-count">0</span>
+            </button>
+        </div>
+        <div class="main-canvas-container">
+            <div id="canvas-container-b" class="canvas-container"></div>
+            <button id="b-btn" class="my-btn" onmousedown="inter=setInterval(takeScreenshotB(), 1*100);" onmouseup="clearInterval(inter);">
+                SampleB x
+                <span id="sampleB-count">0</span>
+            </button>
+        </div>
+
+        <div>
+
+        </div>
+
+        <div class="main-canvas-container">
+            <div id="result" class="canvas-container"></div>
+        </div>
+
+        <div>
+            <button id="train-btn" class="my-btn">Training
+                <span id="loss"></span>
+            </button>
+            <button id="predict" class="my-btn">Predict</button>
+            <button class="my-btn">Load</button>
+            <button class="my-btn">Save</button>
+        </div>
+
+        <div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <script src="./js/train.js"></script>
+
+</body>
+
+</html>

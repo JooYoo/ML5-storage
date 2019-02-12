@@ -1,0 +1,47 @@
+#video-container {
+    text-align: center;
+}
+
+#video {
+    width: 410px;
+    height: 280px;
+}
+
+.canvas-container {
+    overflow-y: auto;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    outline: black 3px solid;
+}
+
+canvas {
+    outline: black 3px solid;
+    width: 50px;
+    height: 60px;
+}
+
+.main-canvas-container {
+    display: inline-block;
+}
+
+#takephoto-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.my-btn {
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.canvas-center {
+    text-align: center;
+}
+
+.train-btn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    padding: 14px 28px;
+}
