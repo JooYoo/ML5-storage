@@ -73,8 +73,10 @@ const featureExtractor = ml5.featureExtractor('MobileNet', function () {
 
     // load model
     loadBtn.onclick = function () {
-        classifier.load('./savedModel/model.json');
-        loadBtn.innerHTML = "Model Loaded";
+        classifier.load('./savedModel/model.json', function () {
+            loadBtn.innerHTML = "Retrain Model Loaded";
+            classifier.classify(gotResults);
+        });
     }
 });
 
